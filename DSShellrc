@@ -1,0 +1,87 @@
+export LC_ALL=$LANG
+export EDITOR=vim
+
+#-----------------
+# Logins
+#-----------------
+alias ucsc="ssh hesu@unix.ic.ucsc.edu"
+alias brucedsu="ssh deisume@brucedsu.com"
+
+#-----------------
+# Hidden Files
+#-----------------
+alias showhidden="defaults write com.apple.finder AppleShowAllFiles TRUE"
+alias hidehidden="defaults write com.apple.finder AppleShowAllFiles FALSE"
+
+#-----------------
+# One-c Commands
+#-----------------
+alias c='clear'
+alias e='exit'
+alias s="echo $?"
+alias m='more'
+alias h='history'
+alias j='jobs -l'
+alias v='vi'
+alias f='fg'
+alias p='pwd'
+
+#-----------------
+# Commands
+#-----------------
+# caffeinate
+alias cf="caffeinate -u -t"
+# ls
+alias la='ls -la'
+# cd
+alias cd..='cd ..'
+alias ..='cd ..'
+# safty nets
+alias rm='rm -i'
+alias cp='cp -i'
+alias in='ln -i'
+# java
+alias j='java'
+jc() { javac "$@".java; }
+# vim
+alias vi="vim"
+alias vimrc="sudo vi /usr/share/vim/vimrc"
+alias vimrc="vi ~/.vimrc"
+alias svi="sudo vi"
+alias edit='vim'
+vij() { vi "$@".java; }
+vic() { vi "$@".c; }
+# tune sudo and su
+alias root='sudo -i'
+alias su='sudo -i'
+# reboot / halt / poweroff
+alias roboot='sudo /sbin/reboot'
+alias poweroff='sudo /sbin/poweroff'
+alias halt='sudo /sbin/halt'
+alias shutdown='sudo /sbin/shutdown'
+
+#-----------------
+# Git
+#-----------------
+alias g="git"
+alias gs="git status"
+alias gd="git diff"
+alias gdc="git diff --cached"
+alias ga="git add"
+alias gb="git branch"
+alias gbn="git branch -b"
+alias gco="git checkout"
+alias gc="git commit"
+alias gcam="git commit -a -m"
+alias gcm="git commit -m"
+alias gi="git init"
+alias gl="git log"
+alias gmg="git merge"
+alias gmv="git mv"
+alias gpull="git pull"
+alias gpush="git push"
+alias grm="git rm"
+
+# Terminal.app reserves ctrl-s for old-fashioned XON/XOFF flow control.
+# Free up ctrl-s and control-q for use with vim
+stty -ixon -ixoff
