@@ -1,5 +1,12 @@
 export LC_ALL=$LANG
 export EDITOR=vim
+DEFAULT_USER="DeiSu"
+
+#----------------------------
+# OS X Show/Hide Hidden Files
+#----------------------------
+alias showHidden="defaults write com.apple.finder AppleShowAllFiles TRUE; killall Finder"
+alias hideHidden="defaults write com.apple.finder AppleShowAllFiles FALSE; killall Finder"
 
 #-----------------
 # Logins
@@ -8,15 +15,10 @@ alias ucsc="ssh hesu@unix.ic.ucsc.edu"
 alias brucedsu="ssh deisume@brucedsu.com"
 
 #-----------------
-# Hidden Files
-#-----------------
-alias showhidden="defaults write com.apple.finder AppleShowAllFiles TRUE"
-alias hidehidden="defaults write com.apple.finder AppleShowAllFiles FALSE"
-
-#-----------------
 # One-c Commands
 #-----------------
 alias c='clear'
+alias p='pwd'
 alias e='exit'
 alias s="echo $?"
 alias m='more'
@@ -24,25 +26,33 @@ alias h='history'
 alias j='jobs -l'
 alias v='vi'
 alias f='fg'
-alias p='pwd'
+alias t='tmux'
 
 #-----------------
 # Commands
 #-----------------
+# python3
+alias p3="python3"
+
 # caffeinate
 alias cf="caffeinate -u -t"
+
 # ls
 alias la='ls -la'
+
 # cd
 alias cd..='cd ..'
 alias ..='cd ..'
+
 # safty nets
-alias rm='rm -i'
+# alias rm='rm -i'
 alias cp='cp -i'
 alias in='ln -i'
+
 # java
 alias j='java'
 jc() { javac "$@".java; }
+
 # vim
 alias vi="vim"
 alias vimrc="sudo vi /usr/share/vim/vimrc"
@@ -51,14 +61,19 @@ alias svi="sudo vi"
 alias edit='vim'
 vij() { vi "$@".java; }
 vic() { vi "$@".c; }
+
 # tune sudo and su
 alias root='sudo -i'
 alias su='sudo -i'
+
 # reboot / halt / poweroff
 alias roboot='sudo /sbin/reboot'
 alias poweroff='sudo /sbin/poweroff'
 alias halt='sudo /sbin/halt'
 alias shutdown='sudo /sbin/shutdown'
+
+# source
+alias so="source"
 
 #-----------------
 # Git
@@ -69,19 +84,41 @@ alias gd="git diff"
 alias gdc="git diff --cached"
 alias ga="git add"
 alias gb="git branch"
-alias gbn="git branch -b"
+alias gbd="git branch -d"
+
+# git checkout
 alias gco="git checkout"
+alias gcob="git checkout -b"
+alias gcom="git checkout master"
+
+# git commit
 alias gc="git commit"
 alias gcam="git commit -a -m"
 alias gcm="git commit -m"
-alias gi="git init"
+
+# git log
 alias gl="git log"
-alias gmg="git merge"
+alias glo="git log --pretty=oneline"
+alias glg="git log --graph"
+
+alias gi="git init"
+alias gm="git merge"
 alias gmv="git mv"
 alias gpull="git pull"
 alias gpush="git push"
 alias grm="git rm"
+alias gr="git reflog"
+alias gsh="git stash"
+alias gshl="git stash list"
+alias gsha="git stash apply"
+alias gshp="git stash pop"
+alias gt="git tag"
+alias gtd="git tag -d"
 
 # Terminal.app reserves ctrl-s for old-fashioned XON/XOFF flow control.
 # Free up ctrl-s and control-q for use with vim
 stty -ixon -ixoff
+
+# 256 color tmux
+alias tmux="TERM=screen-256color-bce tmux"
+alias mb="musicbox"
