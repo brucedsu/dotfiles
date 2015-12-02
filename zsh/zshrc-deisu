@@ -26,7 +26,7 @@ alias h='history'
 alias j='jobs -l'
 alias v='vi'
 alias f='fg'
-alias t='tmux'
+alias t="TERM=screen-256color-bce tmux"
 
 #-----------------
 # Commands
@@ -61,6 +61,8 @@ alias svi="sudo vi"
 alias edit='vim'
 vij() { vi "$@".java; }
 vic() { vi "$@".c; }
+alias vizsh="vi ~/.dotfiles/zsh/zshrc-deisu"
+alias vitmux="vi ~/.tmux.conf"
 
 # tune sudo and su
 alias root='sudo -i'
