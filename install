@@ -8,7 +8,16 @@ fi
 # 2. Change shell to zsh
 chsh -s /bin/zsh
 
-# 2. Create symbolic links
-ln -s ~/.dotfiles/zsh/zshrc ~/.zshrc
-ln -s ~/.dotfiles/inputrc ~/.inputrc
-ln -s ~/.dotfiles/tmux/tmux.conf ~/.tmux.conf
+# 3. Create symbolic links
+if [ -f ~/.zshrc ]; then
+    rm -rf ~/.zshrc
+    ln -s ~/.dotfiles/zsh/zshrc ~/.zshrc
+fi
+if [ -f ~/.inputrc ]; then
+    rm -rf ~/.inputrc
+    ln -s ~/.dotfiles/inputrc ~/.inputrc
+fi
+if [ -f ~/.tmux.conf ]; then
+    rm -rf ~/.tmux.conf
+    ln -s ~/.dotfiles/tmux/tmux.conf ~/.tmux.conf
+fi
