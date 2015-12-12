@@ -1,6 +1,7 @@
 export LC_ALL=$LANG
 export EDITOR=vim
 DEFAULT_USER="DeiSu"
+export LANG=en_US.UTF-8
 
 #----------------------------
 # OS X Show/Hide Hidden Files
@@ -108,6 +109,8 @@ alias gm="git merge"
 alias gmv="git mv"
 alias gpull="git pull"
 alias gpush="git push"
+alias gpullom="git pull origin master"
+alias gpushom="git push origin master"
 alias grm="git rm"
 alias gr="git reflog"
 alias gsh="git stash"
